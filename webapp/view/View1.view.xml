@@ -1,0 +1,134 @@
+<mvc:View controllerName="ztablemaintainance.controller.View1"
+     xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:ui="sap.ui.table" xmlns:f="sap.ui.layout.form"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:u="sap.ui.unified" xmlns:tnt="sap.tnt">
+ 
+  	<Shell id="shell" appWidthLimited="false">
+  	<App id="app5" class="myAppDemoWT">
+			<pages>
+				<Page id="page" titleAlignment="Center">
+					<customHeader>
+						<Bar id="headerBar">
+							
+							<contentMiddle>
+								<FlexBox id="_IDGenFlexBox" alignItems="Center" justifyContent="Center">
+									<items>
+										<Text id="_IDGenText" text="Table maintainance" textAlign="Center" renderWhitespace="true"
+                                          class="sapUiLargeMargin sapMTitle sapMTitleH1"/>
+									</items>
+								</FlexBox>
+							</contentMiddle>
+							
+						</Bar>
+					</customHeader>
+					<content>
+						<IconTabBar id="idIconTabBarFiori2" expanded="true" expandable="false" select="onTabSelect" class="sapUiResponsiveContentPadding"
+							headerMode="Inline" stretchContentHeight="true">
+							<items>
+								<IconTabFilter id="_IDGenIconTabFilter" text="Available Records" key="availableRecords" count="{gradeCountModel>/fullRowCount}">
+								
+								<ui:Table id="Mara1" selectionMode="Multi" rows="{AvailableRecordsModel>/EmpContractDetails}"
+										 enableColumnFreeze="{ui>/showFreezeMenuEntry}"
+										enableCellFilter="{ui>/cellFilterOn}" ariaLabelledBy="title"
+										selectionBehavior="Row" rowSelectionChange="onRowSelection">
+										<ui:columns>
+											<ui:Column id="CTRT_NO" width="13rem" sortProperty="CTRT_NO" filterProperty="CTRT_NO" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar" width="100%">
+													<Text id="_IDGenText2" text="Contract No"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+													<Button id="openMenu2" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText3" text="{AvailableRecordsModel>CTRT_NO}"/>
+												</ui:template>
+											</ui:Column>
+											<ui:Column id="EMP_ID" width="11rem" sortProperty="EMP_ID" filterProperty="EMP_ID" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar1" width="100%">
+													<Text id="_IDGenText4" text="Employee Id"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer3"/>
+													<Button id="openMenu3" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText5" text="{AvailableRecordsModel>EMP_ID}"/>
+												</ui:template>
+											</ui:Column>
+											<ui:Column id="EMP_NAME" width="11rem" sortProperty="EMP_NAME" filterProperty="EMP_NAME" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar2" width="100%">
+													<Text id="_IDGenText6" text="Employee Name"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer4"/>
+													<Button id="openMenu4" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText7" text="{AvailableRecordsModel>EMP_NAME}"/>
+												</ui:template>
+											</ui:Column>
+											<ui:Column id="EMP_MAIL" width="11rem" sortProperty="EMP_MAIL" filterProperty="EMP_MAIL" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar3" width="100%">
+													<Text id="_IDGenText8" text="Employee Email"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer5"/>
+													<Button id="openMenu48" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText9" text="{AvailableRecordsModel>EMP_EMAILID}"/>
+												</ui:template>
+											</ui:Column>
+											<ui:Column id="COUNTRY" width="9rem" sortProperty="COUNTRY" filterProperty="COUNTRY" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar4" width="100%">
+													<Text id="_IDGenText10" text="Country"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer6"/>
+													<Button id="openMenu5" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText11" text="{AvailableRecordsModel>COUNTRY}"/>
+												</ui:template>
+											</ui:Column>
+											<ui:Column id="DOB" width="6.5rem" sortProperty="DOB" filterProperty="DOB" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar5" width="100%">
+													<Text id="_IDGenText12" text="Dob"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer7"/>
+													<Button id="openMenu6" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText13" text="{AvailableRecordsModel>DOB}"/>
+												</ui:template>
+											</ui:Column>
+											<ui:Column id="AGE" width="6.3rem" sortProperty="AGE" filterProperty="AGE" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar6" width="100%">
+													<Text id="_IDGenText14" text="Age"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer8"/>
+													<Button id="openMenu7" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText15" text="{AvailableRecordsModel>AGE}"/>
+												</ui:template>
+											</ui:Column>
+											<ui:Column id="PAYGRADE" width="9rem" sortProperty="PAYGRADE" filterProperty="PAYGRADE" showFilterMenuEntry="true" showSortMenuEntry="true"
+												>
+												<Toolbar id="_IDGenToolbar7" width="100%">
+													<Text id="_IDGenText16" text="Paygrade"/>
+													<ToolbarSpacer id="_IDGenToolbarSpacer9"/>
+													<Button id="openMenu8" icon="sap-icon://navigation-down-arrow" press="handlePressOpenMenu" ariaHasPopup="Menu"/>
+												</Toolbar>
+												<ui:template>
+													<Text id="_IDGenText17" text="{AvailableRecordsModel>PAYGRADE}"/>
+												</ui:template>
+											</ui:Column>
+                                            	</ui:columns>
+									</ui:Table>
+								</IconTabFilter>
+                                </items>
+						</IconTabBar>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+
+</mvc:View>
